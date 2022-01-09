@@ -13,7 +13,7 @@ void main() {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Quicksand'),
-        home: const HomePage(),
+        home: const DetailPage(),
       );
     },
   ));
