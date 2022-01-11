@@ -1,4 +1,5 @@
 import 'package:dog_walk_app/models/doginfodata.dart';
+import 'package:dog_walk_app/view/DetailPage/detail_page.dart';
 import 'package:dog_walk_app/view/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,11 +21,16 @@ class HomePage extends StatelessWidget {
             snap: true,
             backgroundColor: white,
             leadingWidth: 40,
-            leading: const Icon(Icons.location_on_outlined, color: black, size: 28,),
+            leading: const Icon(
+              Icons.location_on_outlined,
+              color: black,
+              size: 28,
+            ),
             titleSpacing: 0,
             title: const Text(
               'Kastanienallee, Berlin',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: black),
+              style: TextStyle(
+                  fontSize: 18, fontWeight: FontWeight.w700, color: black),
             ),
             actions: [
               Padding(
@@ -118,7 +124,9 @@ class JobList extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.only(left: 10, right: 10, top: 15),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.to(() => DetailPage(dogInfo: dogList[index]));
+            },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: SizedBox(
@@ -202,32 +210,35 @@ class FilteredOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(searchOption.length, (index) {
-        return Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Chip(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-            label: Row(
-              children: [
-                Text(
-                  searchOption[index],
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                SvgPicture.asset(
-                  'assets/svg_icons/x.svg',
-                  width: 18,
-                ),
-              ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(searchOption.length, (index) {
+          return Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: Chip(
+              shape:
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+              label: Row(
+                children: [
+                  Text(
+                    searchOption[index],
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  SvgPicture.asset(
+                    'assets/svg_icons/x.svg',
+                    width: 18,
+                  ),
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }

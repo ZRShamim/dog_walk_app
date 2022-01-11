@@ -1,4 +1,3 @@
-import 'package:dog_walk_app/view/DetailPage/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ void main() {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Quicksand'),
-        home: const DetailPage(),
+        home: const HomePage(),
       );
     },
   ));
