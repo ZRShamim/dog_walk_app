@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
     var activeTab = 0.obs;
     return Scaffold(
       body: NestedScrollView(
-
         floatHeaderSlivers: true,
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(

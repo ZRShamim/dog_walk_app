@@ -20,31 +20,11 @@ const List<Map<String, dynamic>> dogList = [
     'service_time_span': 1,
     'is_cycled_week': true,
     'service_hours': [
-      {
-        'day': 'Mon',
-        'service_hour': '7AM - 8Am',
-        'is_booked': true,
-      },
-      {
-        'day': 'Tue',
-        'service_hour': '7AM - 8Am',
-        'is_booked': false,
-      },
-      {
-        'day': 'Wed',
-        'service_hour': '7AM - 8Am',
-        'is_booked': false,
-      },
-      {
-        'day': 'Thu',
-        'service_hour': '7AM - 8Am',
-        'is_booked': true,
-      },
-      {
-        'day': 'Fri',
-        'service_hour': '7AM - 8Am',
-        'is_booked': false,
-      },
+      {'day': 'Mon', 'service_hour': '7AM - 8Am', 'is_booked': true},
+      {'day': 'Tue', 'service_hour': '7AM - 8Am', 'is_booked': false},
+      {'day': 'Wed', 'service_hour': '7AM - 8Am', 'is_booked': false},
+      {'day': 'Thu', 'service_hour': '7AM - 8Am', 'is_booked': true},
+      {'day': 'Fri', 'service_hour': '7AM - 8Am', 'is_booked': false},
     ]
   },
   {
@@ -132,5 +112,20 @@ const List bottomNav = [
   {
     'icon': '/assets/svg_icons/user.svg',
     'title': 'Profile',
+  }
+];
+
+const List account = [
+  {
+    "name": "David",
+    "dob": "June 08, 1998",
+    "mail": "hello@david.com",
+    "isWalkerAccount": false
+  },
+  {
+    "name": "Martha",
+    "dob": "June 08, 1998",
+    "mail": "hello@martha.com",
+    "isWalkerAccount": true
   }
 ];
